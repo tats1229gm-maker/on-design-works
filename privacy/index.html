@@ -67,13 +67,12 @@
   if (cmp) {
     var r = cmp.querySelector('input');
     r.addEventListener('input', function () { cmp.style.setProperty('--x', r.value + '%'); });
-    var N = { day: 'DAY', dusk: 'DUSK', ctx: 'CONTEXT' };
     document.querySelectorAll('.strip button').forEach(function (b) {
       b.addEventListener('click', function () {
         document.querySelectorAll('.strip button').forEach(function (x) { x.setAttribute('aria-pressed', x === b); });
-        document.getElementById('cmpA').src = '/img/' + b.dataset.a + '.jpg';
-        document.getElementById('cmpB').src = '/img/' + b.dataset.b + '.jpg';
-        document.getElementById('lbA').textContent = N[b.dataset.a]; document.getElementById('lbB').textContent = N[b.dataset.b];
+        document.getElementById('cmpA').src = b.dataset.a + '.jpg';
+        document.getElementById('cmpB').src = b.dataset.b + '.jpg';
+        document.getElementById('lbA').textContent = b.dataset.la; document.getElementById('lbB').textContent = b.dataset.lb;
       });
     });
   }

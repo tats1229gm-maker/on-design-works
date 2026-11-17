@@ -210,3 +210,28 @@ footer .meta { display: flex; justify-content: space-between; gap: 8px 16px; fle
   .js .rv { opacity: 0; transform: translateY(30px); transition: opacity 1.2s ease, transform 1.2s ease; }
   .js .rv.on { opacity: 1; transform: none; }
 }
+
+/* 作例の一覧カード（11/17） */
+.wgrid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(16px, 2vw, 28px); }
+@media (max-width: 900px) { .wgrid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 560px) { .wgrid { grid-template-columns: minmax(0, 1fr); } }
+.wcard { display: grid; gap: 14px; text-decoration: none; align-content: start; }
+.wimg { overflow: hidden; aspect-ratio: 4 / 3; background: var(--bg3); }
+.wimg img { width: 100%; height: 100%; object-fit: cover; transition: transform 1.2s ease, opacity .6s; opacity: .9; }
+.wcard:hover .wimg img { transform: scale(1.05); opacity: 1; }
+.wtx h3 { font-size: 18px; margin-top: 6px; transition: color .3s; }
+.wcard:hover h3 { color: var(--gold); }
+.wtx p { font-size: 12px; color: var(--mute); }
+
+.wk.wide { grid-template-columns: minmax(0, 1fr); gap: 32px; }
+.wk.wide .cmpbox { max-width: none; }
+.wk.wide > div:last-child { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); column-gap: clamp(32px, 5vw, 80px); align-items: start; }
+.wk.wide > div:last-child > :not(.specs):not(.actions) { grid-column: 1; }
+.wk.wide .specs { grid-column: 2; grid-row: 1 / span 4; margin-top: 0; }
+.wk.wide .actions { grid-column: 2; }
+@media (max-width: 860px) { .wk.wide > div:last-child { display: block; } .wk.wide .specs { margin-top: 32px; } }
+.specs b { font-size: clamp(22px, 2.4vw, 30px); }
+.gal.two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+@media (max-width: 640px) { .gal.two { grid-template-columns: minmax(0, 1fr); } }
+.gal img { aspect-ratio: auto; }
+.wk.wide .cmp { max-height: none; }
