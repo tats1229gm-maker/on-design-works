@@ -22,7 +22,7 @@
   --grid: rgba(24, 60, 90, .06); --accent: #1f5f8b; --dusk: #b8862f;
   --f-body: "Zen Kaku Gothic New", "Hiragino Sans", "Yu Gothic", "Meiryo", sans-serif;
   --f-mono: "IBM Plex Mono", ui-monospace, Consolas, monospace;
-  --s-1: .8125rem; --s0: 1rem; --s1: 1.25rem; --s2: 1.625rem; --s3: 2.25rem; --s4: clamp(2.25rem, 5.2vw, 3.75rem);
+  --s-1: .8125rem; --s0: 1rem; --s1: 1.25rem; --s2: 1.625rem; --s3: 2.25rem; --s4: clamp(1.75rem, 7.6vw, 3.75rem);
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
@@ -62,6 +62,7 @@ header.top { padding-block: 24px 0; }
 .hero .copy { display: grid; gap: 24px; min-width: 0; }
 @media (max-width: 820px) { .hero .wrap { grid-template-columns: minmax(0, 1fr); } }
 .hero h1 { font-size: var(--s4); font-weight: 900; letter-spacing: .01em; }
+.hero h1 .nb { white-space: nowrap; }
 .hero h1 em { font-style: normal; color: var(--accent); }
 .hero .lead { max-width: 40em; font-size: var(--s1); color: var(--ink-2); line-height: 1.8; }
 .facts { display: flex; flex-wrap: wrap; gap: 8px 20px; font-size: var(--s-1); color: var(--ink-2); }
@@ -138,7 +139,7 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
 <section class="hero">
   <div class="wrap">
     <div class="copy">
-      <h1>まわりの街並みごと、<br><em>建つ前に</em>見せる。</h1>
+      <h1><span class="nb">まわりの街並みごと、</span><br><span class="nb"><em>建つ前に</em>見せる。</span></h1>
       <p class="lead">岡山の一級建築士が、国土交通省の3D都市モデル（PLATEAU）の実測データで周辺の街並みを再現した3Dモデルと、竣工写真のような外観パースを制作いたします。地権者様へのご提案、販売・入居者募集の資料、近隣へのご説明にご活用いただけます。</p>
       <div class="facts"><span>周辺 <b>1,122</b> 棟を実測で</span><span>半径 <b>350</b> m</span><span>岡山市・倉敷市に対応</span></div>
       <div class="actions">
