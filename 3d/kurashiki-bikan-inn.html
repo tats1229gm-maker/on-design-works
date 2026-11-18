@@ -605,5 +605,9 @@ resize(); setCam(0); applySun();
 (function loop(){requestAnimationFrame(loop); renderer.render(scene,camera);})();
 })();
 </script>
+<script>(function(){try{if(location.hash==='#me'){localStorage.setItem('odw_me','1')}if(localStorage.getItem('odw_me'))return}catch(e){}
+var id=Math.random().toString(36).slice(2,10),t0=Date.now(),u='https://proposals.on-design-works.com/_hit';
+function s(k){try{navigator.sendBeacon(u,JSON.stringify({k:k,i:id,h:location.hostname,p:location.pathname,q:location.search.slice(0,40),r:document.referrer.slice(0,120),w:navigator.webdriver?1:0,s:Math.round((Date.now()-t0)/1000)}))}catch(e){}}
+s('v');document.addEventListener('visibilitychange',function(){if(document.visibilityState==='hidden')s('d')});})();</script>
 </body>
 </html>
